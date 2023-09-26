@@ -2,18 +2,55 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => res.type('html').send(html));
+app.get("/", (req, res) => res.type("html").send(html));
 
 app.get('/req', (req, res) => {
-    console.log("Just got a request!")
-    res.send('Yo!')
-})
+  console.log("Just got a request!")
+  res.send('Yo!')
+});
+
+// Desafio 1: Endpoint "/meunome"
+app.get('/meunome', (req, res) => {
+  const meuNome = 'Meu nome é Emilly Soares Santos';
+  res.send(meuNome);
+});
+
+// Desafio 2: Endpoint "/tico"
+app.get('/tico', (req, res) => {
+  res.send('teco');
+});
+
+// Desafio 3: Endpoint "/pokemons"
+app.get('/pokemons', (req, res) => {
+  const pokemons = [
+    { nome: 'Pikachu', numero: 1 },
+    { nome: 'Butterfree', numero: 2 },
+    { nome: 'Pidgeot', numero: 3 },
+    { nome: 'Bulbasaur', numero: 4 },
+    { nome: 'Charizard', numero: 5 },
+    { nome: 'Squirtle', numero: 6 },
+    { nome: 'Kingler', numero: 7 },
+    { nome: 'Primeape', numero: 8 },
+    { nome: 'Muk', numero: 9 },
+    { nome: 'Tauros', numero: 10 },
+  ];
+  res.json(pokemons);
+});
+
+// Desafio 4: Endpoint "/series"
+app.post('/series', (req, res) => {
+  const seriesFavoritas = [
+    { nome: 'American Horror History', genero: 'Horror, suspense e drama' },
+    { nome: 'The Boys', genero: 'Humor ácido, super herói' },
+    { nome: 'The Mentalist', genero: 'Drama, suspense policial' },
+  ];
+  res.json(seriesFavoritas);
+});
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
 
 const html = `
 <!DOCTYPE html>
@@ -60,8 +97,8 @@ const html = `
   </head>
   <body>
     <section>
-      Hello Express API 
+      Hello Express API
     </section>
   </body>
 </html>
-`
+`;
