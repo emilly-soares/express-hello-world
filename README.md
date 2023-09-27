@@ -62,4 +62,4 @@ Se deseja contribuir para este projeto, siga as etapas abaixo:
 5. Crie um novo Pull Request.
 
 
-
+Licença 📝 Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
