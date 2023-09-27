@@ -23,4 +23,22 @@ router.get('/tico', (req, res) => {
    res.send('teco');
 });
 
+// Desafio 3: Rota /pokemons
+router.get('/pokemons', (req, res) => {
+   const pokemons = [
+      { nome: 'Pikachu', numero: 1 },
+      { nome: 'Butterfree', numero: 2 },
+      { nome: 'Pidgeot', numero: 3 },
+      { nome: 'Bulbasaur', numero: 4 },
+      { nome: 'Charizard', numero: 5 },
+      { nome: 'Squirtle', numero: 6 },
+      { nome: 'Kingler', numero: 7 },
+      { nome: 'Primeape', numero: 8 },
+      { nome: 'Muk', numero: 9 },
+      { nome: 'Tauros', numero: 10 },
+   ];
+   res.json(pokemons);
+});
+
+
 module.exports = router;
