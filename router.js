@@ -40,5 +40,14 @@ router.get('/pokemons', (req, res) => {
    res.json(pokemons);
 });
 
+// Desafio 4: Rota /series
+router.post('/series', (req, res) => {
+   const seriesFavoritas = [
+      { nome: 'American Horror History', genero: 'Horror, suspense e drama' },
+      { nome: 'The Boys', genero: 'Humor ácido, super herói' },
+      { nome: 'The Mentalist', genero: 'Drama, suspense policial' },
+   ];
+   res.json(seriesFavoritas);
+});
 
 module.exports = router;
