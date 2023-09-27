@@ -18,4 +18,9 @@ router.get('/meunome', (req, res) => {
    res.send(meuNome);
 });
 
+// Desafio 2: Rota /tico
+router.get('/tico', (req, res) => {
+   res.send('teco');
+});
+
 module.exports = router;
