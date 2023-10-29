@@ -1,7 +1,5 @@
 # Projeto Github Actions API NodeJS Express 🚀
 
-[![Node.js CI](https://github.com/express-hello-world/workflows/Node.js%20CI/badge.svg)](https://github.com/seu-repo/actions)
-
 ## Descrição 📄
 Deploy de API Nodejs Express
 
