@@ -17,6 +17,55 @@ app.get('/hello', (req, res) => {
   });
 });
 
+// Rota inicial
+app.get('/', (req, res) => {
+  res.type('html').send(html);
+});
+
+// Rota /req
+app.get('/req', (req, res) => {
+  console.log('Just got a request!');
+  res.send('Yo!');
+});
+
+// Desafio 1: Rota /meunome
+app.get('/meunome', (req, res) => {
+  const meuNome = 'Meu nome é Emilly Soares Santos';
+  res.send(meuNome);
+});
+
+// Desafio 2: Rota /tico
+app.get('/tico', (req, res) => {
+  res.send('teco');
+});
+
+// Desafio 3: Rota /pokemons
+app.get('/pokemons', (req, res) => {
+  const pokemons = [
+     { nome: 'Pikachu', numero: 1 },
+     { nome: 'Butterfree', numero: 2 },
+     { nome: 'Pidgeot', numero: 3 },
+     { nome: 'Bulbasaur', numero: 4 },
+     { nome: 'Charizard', numero: 5 },
+     { nome: 'Squirtle', numero: 6 },
+     { nome: 'Kingler', numero: 7 },
+     { nome: 'Primeape', numero: 8 },
+     { nome: 'Muk', numero: 9 },
+     { nome: 'Tauros', numero: 10 },
+  ];
+  res.json(pokemons);
+});
+
+// Desafio 4: Rota /series
+app.post('/series', (req, res) => {
+  const seriesFavoritas = [
+     { nome: 'American Horror History', genero: 'Horror, suspense e drama' },
+     { nome: 'The Boys', genero: 'Humor ácido, super herói' },
+     { nome: 'The Mentalist', genero: 'Drama, suspense policial' },
+  ];
+  res.json(seriesFavoritas);
+});
+
 module.exports = { app };
 
 const html = `

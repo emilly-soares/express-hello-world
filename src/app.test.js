@@ -1,17 +1,34 @@
 const request = require('supertest');
 const { app } = require('./app');
 
-describe('/test endpoints', () => {
-  it('check if endpoint /hello returns `Hello World!`', async () => {
-    const data = await request(app).get('/hello');
-    expect(data.statusCode).toBe(200);
-    expect(data.body.message).toBe('Hello World!');
-  });
+describe('Test Endpoints', () => {
+    it('should return Hello World from /hello', async () => {
+      const response = await request(app).get('/hello');
+      expect(response.status).toBe(200);
+      expect(response.body.message).toBe('Hello World!');
+    });
   
-  it('check if endpoint /req returns `Yo!`', async () => {
-    const data = await request(app).get('/req');
-    console.log(data.responde);
-    expect(data.statusCode).toBe(200);
-    expect(data.text).toBe('Yo!');
+    it('should return Yo! from /req', async () => {
+      const response = await request(app).get('/req');
+      expect(response.status).toBe(200);
+      expect(response.text).toBe('Yo!');
+    });
+  
+    it('should return the author name from /meunome', async () => {
+      const response = await request(app).get('/meunome');
+      expect(response.status).toBe(200);
+      expect(response.text).toBe('Meu nome é Emilly Soares Santos');
+    });
+  
+    it('should return a list of pokemons from /pokemons', async () => {
+      const response = await request(app).get('/pokemons');
+      expect(response.status).toBe(200);
+      expect(response.body).toHaveLength(10); // Check the length or structure of the response
+    });
+  
+    it('should return a list of series from /series', async () => {
+      const response = await request(app).post('/series');
+      expect(response.status).toBe(200);
+      expect(response.body).toHaveLength(3); // Check the length or structure of the response
+    });
   });
-});
