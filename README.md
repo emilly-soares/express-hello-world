@@ -55,7 +55,7 @@ Para executar os testes automatizados, utilize o Jest. Certifique-se de ter as d
 
 ```bash
 yarn test
-
+   ```
 
 Os testes avaliarão se os endpoints estão funcionando corretamente.
 
