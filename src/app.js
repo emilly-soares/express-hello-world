@@ -1,16 +1,23 @@
 const express = require("express");
-const cyclic = require("cyclic");
+
 const app = express();
-const port = process.env.PORT || 3001;
+app.use(express.json())
+app.use(express.urlencoded({extended: true}));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.get("/", (req, res) => res.type('html').send(html));
 
-const router = require('./router');
+app.get('/req', (req, res) => {
+    console.log("Just got a request!")
+    res.send('Yo!')
+})
 
-app.use('/', router);
+app.get('/hello', (req, res) => {
+  res.status(200).json({
+    message: "Hello World!"
+  });
+});
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+module.exports = { app };
 
 const html = `
 <!DOCTYPE html>
