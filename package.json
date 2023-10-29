@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "jest": {
     "testEnvironment": "node",
